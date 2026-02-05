@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class GameDirector : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public BallManager ballManager;
+
+    private void Start()
     {
-        
+        RestartLevel();
     }
 
-    // Update is called once per frame
-    void Update()
+    void RestartLevel()
     {
-        
+          ballManager.RestartBallManager(); 
     }
 }
