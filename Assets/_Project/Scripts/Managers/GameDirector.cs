@@ -1,16 +1,27 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameDirector : MonoBehaviour
 {
-    public BallManager ballManager;
+    public TokenManager tokenManager;
 
-    private void Start()
+    private void Update()
     {
-        RestartLevel();
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            RestartLevel();
+        }
     }
 
-    void RestartLevel()
+    private void RestartLevel()
     {
-          ballManager.RestartBallManager(); 
+        tokenManager.RestartTokenManager();
     }
+
+    internal void Clicked()
+    {
+        tokenManager.MoveTokenUp();
+    }
+
 }
